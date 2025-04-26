@@ -14,6 +14,9 @@ importers:
       eslint:
         specifier: ^9.25.1
         version: 9.25.1
+      flush-promises:
+        specifier: ^1.0.2
+        version: 1.0.2
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
@@ -1137,6 +1140,9 @@ packages:
 
   flatted@3.3.3:
     resolution: {integrity: sha512-GX+ysw4PBCz0PzosHDepZGANEuFCMLrnRTiEy9McGjmkCQYwRq4A/X786G/fjM/+OjsWSU1ZrY5qyARZmO/uwg==, tarball: https://registry.npmjs.org/flatted/-/flatted-3.3.3.tgz}
+
+  flush-promises@1.0.2:
+    resolution: {integrity: sha512-G0sYfLQERwKz4+4iOZYQEZVpOt9zQrlItIxQAAYAWpfby3gbHrx0osCHz5RLl/XoXevXk0xoN4hDFky/VV9TrA==, tarball: https://registry.npmjs.org/flush-promises/-/flush-promises-1.0.2.tgz}
 
   format@0.2.2:
     resolution: {integrity: sha512-wzsgA6WOq+09wrU1tsJ09udeR/YZRaeArL9e1wPbFg3GG2yDnC2ldKpxs4xunpFF9DgqCqOIra3bc1HWrJ37Ww==, tarball: https://registry.npmjs.org/format/-/format-0.2.2.tgz}
@@ -3028,6 +3034,8 @@ snapshots:
       keyv: 4.5.4
 
   flatted@3.3.3: {}
+
+  flush-promises@1.0.2: {}
 
   format@0.2.2: {}
 

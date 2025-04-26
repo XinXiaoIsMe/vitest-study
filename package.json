@@ -6,7 +6,9 @@
   "description": "",
   "author": "XinXiaoIsMe",
   "license": "ISC",
-  "keywords": ["vitest"],
+  "keywords": [
+    "vitest"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "vitest",
@@ -16,6 +18,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^4.12.0",
     "eslint": "^9.25.1",
+    "flush-promises": "^1.0.2",
     "typescript": "^5.8.3",
     "vitest": "^3.1.2"
   }
