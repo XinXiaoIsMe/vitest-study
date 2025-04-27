@@ -3,9 +3,12 @@
     "target": "es2016",
     "module": "commonjs",
     "types": [
-      "vitest/globals",
-      "vite/client"
+      "vitest/globals"
     ],
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "baseUrl": ".",
     "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
