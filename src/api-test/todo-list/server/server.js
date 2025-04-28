@@ -1,8 +1,8 @@
-const express = require('express');
-const cors = require('cors');
+const fs = require('node:fs');
+const path = require('node:path');
 const bodyParser = require('body-parser');
-const fs = require('fs');
-const path = require('path');
+const cors = require('cors');
+const express = require('express');
 
 const app = express();
 const PORT = 3000;
@@ -25,7 +25,8 @@ function loadTodos() {
       if (todos.length > 0) {
         idCounter = Math.max(...todos.map(t => t.id)) + 1;
       }
-    } catch (e) {
+    }
+    catch (e) {
       console.error('Failed to parse todos.json:', e);
       todos = [];
     }
@@ -53,13 +54,13 @@ app.post('/api/todos', (req, res) => {
   }
   const newTodo = { id: idCounter++, title, completed: false };
   todos.push(newTodo);
-  saveTodos();  // 保存到文件
+  saveTodos(); // 保存到文件
   res.status(201).json(newTodo);
 });
 
 // 更新一个 todo
 app.put('/api/todos/:id', (req, res) => {
-  const id = parseInt(req.params.id);
+  const id = Number.parseInt(req.params.id);
   const { title, completed } = req.body;
 
   const todo = todos.find(t => t.id === id);
@@ -67,26 +68,29 @@ app.put('/api/todos/:id', (req, res) => {
     return res.status(404).json({ error: 'Todo not found' });
   }
 
-  if (title !== undefined) todo.title = title;
-  if (completed !== undefined) todo.completed = completed;
+  if (title !== undefined)
+    todo.title = title;
+  if (completed !== undefined)
+    todo.completed = completed;
 
-  saveTodos();  // 保存到文件
+  saveTodos(); // 保存到文件
   res.json(todo);
 });
 
 // 删除一个 todo
 app.delete('/api/todos/:id', (req, res) => {
-  const id = parseInt(req.params.id);
+  const id = Number.parseInt(req.params.id);
   const index = todos.findIndex(t => t.id === id);
   if (index === -1) {
     return res.status(404).json({ error: 'Todo not found' });
   }
   todos.splice(index, 1);
-  saveTodos();  // 保存到文件
+  saveTodos(); // 保存到文件
   res.status(204).send();
 });
 
 // 启动服务器
 app.listen(PORT, () => {
+  // eslint-disable-next-line no-console
   console.log(`TodoList server running at http://localhost:${PORT}`);
 });
