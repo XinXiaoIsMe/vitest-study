@@ -1,7 +1,7 @@
 import { useTodoStore } from '@/store/todo';
 import { createPinia, setActivePinia } from 'pinia';
+import { mockAddTodo, mockGetTodo, mockRemoveTodo } from '../mocks/handlers';
 import { server } from '../mocks/server';
-import { mockAddTodo, mockGetTodo, mockRemoveTodo } from '../mocks/handlers'
 
 describe('todo list', () => {
   it('should add todo', async () => {
@@ -29,8 +29,8 @@ describe('todo list', () => {
       {
         id: 1,
         title: 'study vitest',
-        completed: false
-      }
+        completed: false,
+      },
     ];
     server.use(mockGetTodo(todoList));
     setActivePinia(createPinia());
