@@ -1,14 +1,16 @@
 {
   "compilerOptions": {
     "target": "es2016",
+    "baseUrl": ".",
     "module": "commonjs",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
     "types": [
       "vitest/globals"
     ],
-    "paths": {
-      "@/*": ["src/*"]
-    },
-    "baseUrl": ".",
     "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
